@@ -1,11 +1,23 @@
 import React from "react";
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const OTP = () => {
+  const navigate = useNavigate();
+
   const handleVerify = () => {
     // Handle OTP verification logic here
     alert("OTP Verified!");
+  };
+
+  const handleNewOTP = () => {
+    // Handle new OTP generation logic here
+    alert("New OTP Generated!");
+  };
+
+  const handleBack = () => {
+    navigate(-1); // Navigate back to the previous screen
   };
 
   return (
@@ -28,8 +40,10 @@ const OTP = () => {
             </InputOTPGroup>
           </InputOTP>
         </div>
-        <div className="mt-4 flex justify-center">
+        <div className="mt-4 flex justify-center space-x-4">
           <Button onClick={handleVerify}>Verify OTP</Button>
+          <Button onClick={handleNewOTP}>New OTP Generate</Button>
+          <Button onClick={handleBack}>Back</Button>
         </div>
       </div>
     </div>
